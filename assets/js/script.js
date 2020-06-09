@@ -54,6 +54,5 @@ $(".b5").on("click", function() {
 $(".e5").val(localStorage.getItem("5:00"));
 
 // this function will change the date to the current day
-$("#currentDay").text(new Date());
-
+$("#currentDay").text(moment().format('LLLL'));
 // need new function to change the colors of the fields once they are out of date
