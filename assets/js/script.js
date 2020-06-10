@@ -1,3 +1,21 @@
+// need function to change the colors of the fields once they are out of date
+var currentBox;
+var currentTime = moment().format("H");
+
+$(window).on("load", function() {
+    for (i = 0; i <= 23; i++) {
+        currentBox = i;
+        if (currentTime == i) {
+            $("#" + currentBox).addClass("present");
+        }
+        else if (currentTime > i) {
+            $("#" + currentBox).addClass("past");
+        }
+        else {
+            $("#" + currentBox).addClass("future");
+        }
+    }
+})
 // these functions will save the text input when the button is clicked. 
 $(".b9").on("click", function() {
     var entertext = $(".e9").val();
@@ -55,4 +73,5 @@ $(".e5").val(localStorage.getItem("5:00"));
 
 // this function will change the date to the current day
 $("#currentDay").text(moment().format('LLLL'));
-// need new function to change the colors of the fields once they are out of date
+
+
